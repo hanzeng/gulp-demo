@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>案例展示</title>
+    <meta name=”description” content=”擎锋科技是一家致力于AR增强现实技术研究和应用的高科技公司，为企业和消费者提供增强现实AR解决方案。”>
+    <meta name=”keyword” content="擎锋科技，ar，Seego，72变，添翼，APP方案定制，AR方案定制">
+    <!--IE=edge告诉IE使用最新的引擎渲染网页，chrome=1则可以激活Chrome Frame.-->
+    <meta http-equiv="X-UA-Compatible" content="IE=7,IE=9">
+    <meta http-equiv="X-UA-Compatible" content="IE=7,9">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <!--兼容IE8-->
+    <link rel="shortcut icon" href="/bitbug_favicon.ico" />
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body class="application case-show">
+<div class='header'>
+    <div class='nav clearfix'>
+        <div class='logo'>
+            <a href="index.html">
+                <img src='images/nav_logo.png' alt=''>
+            </a>
+        </div>
+        <div class='navli'>
+            <ul class='clearfix'>
+                <li>
+                    <a class='rootA' href='about.html'>关于我们</a>
+                </li>
+                <li>
+                    <a class='rootA' href='product.html'>产品中心</a>
+                </li>
+                <li class='act'>
+                    <a class='rootA' href='case-show.html'>案例展示</a>
+                </li>
+                <li>
+                    <a class='rootA' href='our-service-app.html'>
+                        服务介绍
+                    </a>
+                    <div class='subhead'>
+                        <a href='our-service-app.html'>APP方案定制</a>
+                        <a href='our-service-ar.html'>AR方案定制</a>
+                    </div>
+                </li>
+                <li>
+                    <a class='rootA' href='index.html'>首页</a>
+                </li>
+            </ul>
+            <i class='navLine'></i>
+        </div>
+        <div class="personal"></div>
+    </div>
+</div>
+<div class="con">
+    <div class="level5"></div>
+    <div class="case-show-con">
+        <div class="nav clearfix">
+            <span class="act">全部</span>
+            <span title="衣">衣</span>
+            <span title="食">食</span>
+            <span title="住">住</span>
+            <span title="行">行</span>
+            <span title="广告">广告</span>
+            <span title="教育">教育</span>
+            <span title="百货">百货</span>
+            <span title="工业">工业</span>
+            <span title="娱乐">娱乐</span>
+        </div>
+
+        <ul class="con-ul clearfix" id="caseListCon">
+        </ul>
+    </div>
+
+    <script src="js/foot.js"></script>
+
+</div>
+<!--[if !IE]> -->
+<script src="js/jquery-2.1.4.min.js"></script>
+<!-- <![endif]-->
+
+<!--[if lte IE 8]>
+<script src="js/jquery-1.6.4.min.js"></script>
+<![endif]-->
+
+<!--[if gt IE 8]>
+<script src="js/jquery-2.1.4.min.js"></script>
+<![endif]-->
+<script src="js/index.js"></script>
+<script>
+    jQuery.support.cors = true;
+    var Houst = 'http://web.72change.net';
+    function getList(type) {
+        $.ajax({
+            url : Houst + '/api/demo/getDemoList',
+            type: 'GET',
+            dataType: 'JSON',
+            data: {
+                demoTitle: type,
+                demoStatus: 0,
+                pageNum: 1,
+                pageSize: 100
+            },
+            success : function(de){
+                var list = de.result.list;
+                if(list.length>0){
+                    var html = '';
+                    for (var i in list){
+                        html += '<li class="clearfix">';
+                        html += '   <div class="d01">';
+                        html += '       <a href="case-details.html?id='+ list[i].id +'">';
+                        html += '           <img src="'+ list[i].demoPic3 +'" alt="" />';
+                        html += '       </a>';
+                        html += '   </div>';
+                        html += '   <div class="d02">';
+                        html += '       <h5>'+ list[i].demoName +'</h5>';
+                        html += '       <div class="other">';
+                        html += '           <span>';
+                        html += '               <i class="icon01 iconfont">&#xe649;</i>';
+                        html += '               <i>'+ list[i].demoTitle.split(',').join(' ') +'</i>';
+                        html += '           </span>';
+                        html += '           <span>';
+                        html += '               <i class="icon02 iconfont">&#xe618;</i>';
+                        html += '               <i class="PV">'+ list[i].demoClick || 0 +'</i>';
+                        html += '           </span>';
+                        html += '       </div>';
+                        html += '       <p class="price">'+ list[i].demoPrice +'元/套</p>';
+                        html += '   </div>';
+                        html += '</li>';
+                    }
+                    $('#caseListCon').html(html);
+                }
+            },
+            error:function(){
+                alert('请求超时');
+            }
+        });
+    }
+    $('.case-show-con .nav').find('span').click(function() {
+        $(this).addClass('act').siblings().removeClass('act');
+        getList($(this).attr('title'));
+    }).eq(0).click();
+
+</script>
+</body>
+</html>
