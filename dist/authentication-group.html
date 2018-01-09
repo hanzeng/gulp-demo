@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>案例详情</title>
+    <meta name=”description” content=”擎锋科技是一家致力于AR增强现实技术研究和应用的高科技公司，为企业和消费者提供增强现实AR解决方案。”>
+    <meta name=”keyword” content="擎锋科技，ar，Seego，72变，添翼，APP方案定制，AR方案定制">
+    <!--IE=edge告诉IE使用最新的引擎渲染网页，chrome=1则可以激活Chrome Frame.-->
+    <meta http-equiv="X-UA-Compatible" content="IE=7,IE=9">
+    <meta http-equiv="X-UA-Compatible" content="IE=7,9">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <!--兼容IE8-->
+    <link rel="shortcut icon" href="/bitbug_favicon.ico" />
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body class="uploadInfo">
+<div class='header case-header'>
+    <div class='nav clearfix'>
+        <div class='logo'>
+            <a href="index.html">
+                <img src='images/nav_logo.png' alt=''>
+            </a>
+        </div>
+        <div class='navli'>
+            <ul class='clearfix'>
+                <li>
+                    <a class='rootA' href='about.html'>关于我们</a>
+                </li>
+                <li>
+                    <a class='rootA' href='product.html'>产品中心</a>
+                </li>
+                <li>
+                    <a class='rootA' href='case-show.html'>案例展示</a>
+                </li>
+                <li>
+                    <a class='rootA' href='our-service-app.html'>
+                        服务介绍
+                    </a>
+                    <div class='subhead'>
+                        <a href='our-service-app.html'>APP方案定制</a>
+                        <a href='our-service-ar.html'>AR方案定制</a>
+                    </div>
+                </li>
+                <li>
+                    <a class='rootA' href='index.html'>首页</a>
+                </li>
+            </ul>
+        </div>
+        <div class="personal"></div>
+    </div>
+</div>
+<div class="con">
+    <div class="authentication-group authentication">
+        <h3>公司认证</h3>
+        <div class="content">
+            <div class="item item-title">
+                <h5>公司信息</h5>
+            </div>
+            <div class="item clearfix">
+                <label>公司全称<i>*</i></label>
+                <input class="ipt companyName" type="text" maxlength="200" placeholder="请填写与营业执照一致的合法公司全称" />
+                <p class="hint iconfont">&#xe627;<span>填写的信息不符合规范</span></p>
+            </div>
+            <div class="item clearfix">
+                <label>营业执照注册号</label>
+                <input class="ipt business_license regIdNo" type="text" onkeyup="this.value=this.value.replace(/\D/g,'')"  onafterpaste="this.value=this.value.replace(/\D/g,'')" maxlength="15" placeholder="请填写完整的营业执照上的注册号" />
+                <p class="hint iconfont">&#xe627;<span>请填写完整的营业执照上的注册号</span></p>
+            </div>
+            <div class="item clearfix">
+                <label>营业执照照片</label>
+                <div class="add-con">
+                    <div class="add">
+                        <a class="pic" href="">
+                            <img src="" id="myPhoto" alt="">
+                            <span class="iconfont">&#xe652;</span>
+                            <input type="file" id="filee" />
+                        </a>
+                    </div>
+                    <p class="tag">1.须2M以内，JPG/PNG格式的图片；<br />2.我司资质验证系统已与工商部门联网，请勿提供虚假证件。</p>
+                </div>
+            </div>
+            <div class="item clearfix">
+                <label>联系人<i>*</i></label>
+                <input class="ipt name" type="text" maxlength="20" placeholder="请填写联系人" />
+                <p class="hint iconfont">&#xe627;<span>填写的联系人名称不符合规范</span></p>
+                <div class="item-d">我们会第一时间将审核结果通知您，并保证不会对外公布此号码</div>
+            </div>
+            <div class="item clearfix">
+                <label>手机号码<i>*</i></label>
+                <input class="ipt isMobile" type="text" maxlength="11" placeholder="请填写可以联系到您的手机号码" />
+                <p class="hint iconfont">&#xe627;<span>请填写有效的11位数字的手机号码</span></p>
+            </div>
+            <div class="item clearfix">
+                <label>电子邮箱</label>
+                <input class="ipt isEmail" type="text" placeholder="请填写有效邮箱，用于接收平台审核通知等重要消息" />
+                <p class="hint iconfont">&#xe627;<span>请填写有效的电子邮箱</span></p>
+            </div>
+            <!--<div class="item item-20 clearfix">-->
+                <!--<label>联系地址</label>-->
+                <!--<select name="province" id="province" class="auth-ipt">-->
+                    <!--<option value="请选择">请选择省/直辖市</option>-->
+                <!--</select>-->
+                <!--<select name="city" id="city" class="auth-ipt">-->
+                    <!--<option value="请选择">请选择市/地区</option>-->
+                <!--</select>-->
+                <!--<p class="hint iconfont">&#xe627;<span>请选择联系地址</span></p>-->
+            <!--</div>-->
+            <div class="item clearfix">
+                <label>联系地址</label>
+                <input class="ipt detailedAdd" type="text" placeholder="填写有效的联系地址，该地址作为联系您和回寄纸质协议等使用" />
+                <p class="hint iconfont">&#xe627;<span>请填写有效地址</span></p>
+            </div>
+            <div class="item item-btn">
+                <a class="back-btn" href="">返回上一步</a>
+                <a class="sub-btn" href="javascript:;">提交</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/foot.js"></script>
+</div>
+
+
+<!--[if !IE]> -->
+<script src="js/jquery-2.1.4.min.js"></script>
+<!-- <![endif]-->
+
+<!--[if lte IE 8]>
+<script src="js/jquery-1.6.4.min.js"></script>
+<![endif]-->
+
+<!--[if gt IE 8]>
+<script src="js/jquery-2.1.4.min.js"></script>
+<![endif]-->
+<script src="http://api.html5media.info/1.1.8/html5media.min.js"> </script>
+
+<script src="js/rem100.js"></script>
+<script src="js/index.js"></script>
+<script src="js/area.js"></script>
+<script src="js/select.js"></script>
+<script src="js/verify.js"></script>
+<script>
+
+</script>
+</body>
+</html>
